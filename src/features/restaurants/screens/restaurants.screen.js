@@ -1,6 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import { StyleSheet, View, SafeAreaView, StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
+
+import { RestaurantInfo } from "../components/restaurant-info.component";
 
 export const RestaurantsScreen = () => (
   <SafeAreaView style={styles.container}>
@@ -8,7 +10,7 @@ export const RestaurantsScreen = () => (
       <Searchbar placeholder="Search" />
     </View>
     <View style={styles.list}>
-      <Text>list in screen</Text>
+      <RestaurantInfo />
     </View>
   </SafeAreaView>
 );
