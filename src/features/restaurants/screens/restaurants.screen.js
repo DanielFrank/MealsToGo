@@ -8,7 +8,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 
 const SafeArea = styled.SafeAreaView`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight || 0}px;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
 `;
 
 const SearchContainer = styled.View`
@@ -16,7 +16,9 @@ const SearchContainer = styled.View`
 `;
 
 const RestaurantList = styled(FlatList).attrs({
-  contentContainerStyle: 16,
+  contentContainerStyle: {
+    padding: 16,
+  },
 })``;
 
 export const RestaurantsScreen = () => (
