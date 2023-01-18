@@ -26,7 +26,6 @@ const LoadingContainer = styled(View)`
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
-  console.log(navigation);
   return (
     <SafeArea>
       {isLoading && (
@@ -41,7 +40,7 @@ export const RestaurantsScreen = ({ navigation }) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate("RestaurantDetail");
+                navigation.navigate("RestaurantDetail", { restaurant: item });
               }}
             >
               <Spacer position="bottom" size="large">
