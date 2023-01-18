@@ -15,7 +15,7 @@ const Map = styled(MapView)`
 
 const SomeText = styled.Text``;
 
-export const MapScreen = () => {
+export const MapScreen = ({ navigation }) => {
   const { restaurants } = useContext(RestaurantsContext);
   const { location } = useContext(LocationContext);
   const [latDelta, setLatDelta] = useState(0);
@@ -49,7 +49,11 @@ export const MapScreen = () => {
                 longitude: restaurant.geometry.location.lng,
               }}
             >
-              <Callout>
+              <Callout
+                onPress={() =>
+                  navigation.navigate("RestaurantDetail", { restaurant })
+                }
+              >
                 <MapCallout restaurant={restaurant} />
               </Callout>
             </Marker>
